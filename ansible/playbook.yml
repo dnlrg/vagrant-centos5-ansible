@@ -1,0 +1,10 @@
+---
+- hosts: all
+  vars:
+    base_packages:
+    - vim-enhanced
+    - rsync
+    - screen
+  become: yes
+  roles:
+  - base-packages
