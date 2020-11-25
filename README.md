@@ -14,7 +14,7 @@ https://www.ansible.com/blog/using-ansible-to-manage-rhel-5-yesterday-today-and-
 - vagrant
 - virtualbox
 - make
-- python2
+- python2 (With module build support)
 - virtualenv
 
 ## How to use
