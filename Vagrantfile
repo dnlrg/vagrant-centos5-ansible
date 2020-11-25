@@ -6,6 +6,8 @@ Vagrant.configure("2") do |config|
   config.vm.box = "bento/centos-5.11"
   config.vm.box_check_update = true
 
+  config.ssh.extra_args = ["-o", "KexAlgorithms=+diffie-hellman-group1-sha1"]
+
   config.vm.synced_folder ".", "/vagrant", disabled: false
 
   config.vm.provider "virtualbox" do |vb|
@@ -23,5 +25,6 @@ Vagrant.configure("2") do |config|
 
   config.vm.provision "ansible" do |ansible|
     ansible.playbook = "ansible/playbook.yml"
+    ansible.raw_ssh_args = config.ssh.extra_args
   end
 end
